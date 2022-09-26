@@ -3,15 +3,6 @@ import k6Http from 'k6/http';
 import { getUrl, getHttp } from './helpers.js';
 import { URL } from 'https://jslib.k6.io/url/1.0.0/index.js';
 
-export const options = {
-  vus: 1,
-  duration: '1m',
-  thresholds: {
-    http_req_duration: ['p(99)<1500'],
-    http_req_failed: ['rate<0.01'],
-  },
-};
-
 const LOGIN = 'admin';
 const PASSWORD = 'admin';
 
